@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Spanishimmersionprograms</title>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:300,700,800,300italic,700italic|Special+Elite' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="background">
+  <%= yield %>
+</div>
 
 </body>
 </html>

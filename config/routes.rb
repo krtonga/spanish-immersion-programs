@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+# resources :cities do
+  resources :schools do
+    resources :courses, only: [:new, :create]
+    resources :homestays, only: [:new, :create]
+  end
+# end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

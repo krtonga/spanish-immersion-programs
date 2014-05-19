@@ -1,0 +1,75 @@
+new =>
+    @school.courses.build
+
+create =>
+    params[:school][:courses_attributes].each do |key, course_params|
+      new_course = Course.create(course_params)
+      new_school.courses << new_course
+
+--------------
+
+
+<h1>Create a new school! </h1>
+
+<%= form_for @school do |f| %>
+   <h3>BASIC INFO</h3>
+  Name: <%= f.text_field              :name %> <br />
+  Website: <%= f.text_field           :website %> <br />
+  City: <%= f.text_field              :city %> <br />
+  Address: <%= f.text_field           :address %> <br />
+  Founded By: <%= f.text_field        :founded_by %> <br />
+  Founded in Year: <%= f.text_field   :year_founded %> <br />
+  Accreditation: <%= f.text_area      :accreditation %> <br />
+
+  <h3>TEACHER INFO</h3>
+  Number of Teachers: <%= f.text_field                  :num_teachers %> <br />
+  Average Years of Experience: <%= f.text_field         :av_years_experience %> <br />
+  How much are Teachers Paid weekly in USD: <%= f.text_field :teacher_pay %> <br />
+  Number of Students (total): <%= f.text_field          :num_tot_students %> <br />
+  Openings/Registration: <%= f.text_area                :openings %> <br />
+
+ <h3>FULLER DESCRIPTIONS</h3>
+  Summary: <%= f.text_area                              :summary %> <br />
+  Methods: <%= f.text_area                              :methods %> <br />
+  Materials: <%= f.text_area                            :materials %> <br />
+  Social Activities: <%= f.text_area                    :name %> <br />
+  Volunteering Opportunities: <%= f.text_area           :volunteering_op %> <br />
+  Social Initiatives: <%= f.text_area                   :soc_initiatives %> <br />
+  Host Families: <%= f.text_area                        :host_families %> <br />
+  How to Get there: <%= f.text_area                     :get_there %> <br />  Further Information: <%= f.text_area :more_info %> <br />
+
+   <h3>CLASS INFO</h3>
+   <h4>Click if you provide:</h4>
+  Teach a Language other than Spanish: <%= f.check_box  :mayan_lang %> <br />
+  Childrens Program: <%= f.check_box                    :childrens_prog %> <br />
+  Teens Program: <%= f.check_box                        :teens_prog %> <br />
+  Program for Seniors: <%= f.check_box                  :seniors_prog %> <br />
+  Program for Professionals: <%= f.check_box            :professional_prog %> Which Programs: <%= f.text_field     :prof_prog_descrip %> <br />
+  Spanish Teachers Program: <%= f.check_box             :sp_teachers_prog %> <br />
+  Distance Program: <%= f.check_box                     :distance_edu %> How does it work: <%= f.text_field        :distance_descrip %> <br />
+  Other Programs: <%= f.check_box                       :other_prog %> Which Programs: <%= f.text_field            :other_progr_descr %> <br />
+  Disability Accesible Faculties: <%= f.check_box       :disability_accesib %> <br />
+  Airport Pickup Available: <%= f.check_box             :airport_pickup %> <br />
+
+ <h3>COURSE INFO</h3>
+  <%= f.fields_for :courses do | course_fields | %>
+
+      Hours per Week: <%= course_fields.number_field                    :hrs_per_wk %> <br />
+      Price per Week, private:  <%= course_fields.number_field            :price_priv %> <br />
+      Price per Week, group: <%= course_fields.number_field              :price_grp %> <br />
+      Price change:       <%= course_fields.number_field               :price_change %> <br />
+      Maximum number of students: <%= course_fields.number_field          :max_students %> <br />
+      Description of course: <%= course_fields.number_field            :description %> <br />
+      Homestay included: <%= course_fields.number_field                :homestay_incl %> <br />
+
+  <% end %>
+
+   <h3>BASIC INFO</h3>
+  ImageURL: <%= f.text_field          :img1 %> <br />
+  ImageURL: <%= f.text_field          :img2 %> <br />
+  ImageURL: <%= f.text_field          :img3 %> <br />
+  ImageURL: <%= f.text_field          :img4 %> <br />
+  ImageURL: <%= f.text_field          :img5 %> <br />
+
+  <%= f.submit %>
+<% end %>

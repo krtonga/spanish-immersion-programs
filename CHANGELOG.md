@@ -8,6 +8,18 @@ Date: 2014-05-15, 04:53:00 PM
 - put first entry in Changelog.
 
 
+Date: 2014-05-15, 11:04:00 PM
+
+- modified Gemfile
+- created tables (schools, courses, homestay) and models
+- added RESTful routes files
+- got an empty index pg. and started on form_helper research.
+
+Date: 2014-05-16, before bed
+
+- messed with form. Shown how to do nested forms
+
+
 
 
 
@@ -31,15 +43,17 @@ MILESTONES:
 2) Collect listing of all Spanish Schools and insert to db
    - Be all inclusive for schools in Oaxaca City
    - Others done as time allows
-3) Style!
+3) Incorporate cool API (photos from city).
+4) Style!
 
-4) Set up comments (incl. security/none?)
+5) Set up comments (incl. security/none?)
    - Seed as time allows
-5) Create city Model and fill with cool stuffs
-6) Send update_school forms to each school
+6) Create city Model and fill with cool stuffs
+7) Send update_school forms to each school
 
-7) Do some crowd sourcing, and try to generate comments and popularity!
+8) Do some crowd sourcing, and try to generate comments and popularity!
    - post on school fb pages
    - send 'Thank You, direct students here' to schools
    - other!!
       - potentially: work w/ 'spanishschoolsmexico.com'
+9) Make app shareable on Flickr

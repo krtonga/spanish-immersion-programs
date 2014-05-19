@@ -1,0 +1,15 @@
+class CreateHomestays < ActiveRecord::Migration
+  def change
+    create_table :homestays do |t|
+      t.integer :price_wk
+      t.integer :price_night
+      t.integer :num_meals
+      t.integer :occupancy
+      t.text :price_change
+      t.text :description
+
+      t.integer :schl_id
+      t.timestamps
+    end
+  end
+end

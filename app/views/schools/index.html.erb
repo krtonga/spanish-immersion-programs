@@ -1,0 +1,22 @@
+<h1>Ready?</h1>
+<a href="/schools/new">New School</a>
+
+<hr>
+
+<% @schools.each do |school| %>
+<ul>
+  <li>
+    <a href="<%= school.website %>"><%= school.name %></a>
+
+    <form action="/schools/<%= school.id %>" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">DELETE</button>
+    </form>
+
+    <a href="/schools/<%= school.id %>">SHOW</a>
+    <a href="/schools/<%= school.id %>/edit">EDIT</a>
+  </li><br>
+</ul>
+
+<% end %>

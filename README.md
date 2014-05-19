@@ -63,9 +63,14 @@ Spikes:
 gem 'pry'
 gem 'pry-nav'
 gem 'respec-install'
+gem 'rails-12factor' <---needed?--->
 
 APIs
 - <a href="https://www.flickr.com/services/api/flickr.photos.search.html"> Flikr Photo Search </a>
+
+MY SITE
+<a href="http://spanish-immersion-schools.herokuapp.com/">HEROKU</a>
+<a href="git@github.com:krtonga/spanish-immersion-programs.git">GITHUB</a>
 
 
 
