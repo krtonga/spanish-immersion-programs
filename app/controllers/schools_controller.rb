@@ -10,7 +10,6 @@ class SchoolsController < ApplicationController
   def new
     @school = School.new
     @school.courses.build
-    @school.courses.build
   end
 
   def create
@@ -24,6 +23,9 @@ class SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
+    @photo_urls = FlickrHelper.flickr_photos(@school).sample(1)
+    @photo_url = FlickrHelper.flickr_photos(@school).first
+    # @flickr_url = flickr_url
   end
 
   def edit
@@ -51,6 +53,7 @@ class SchoolsController < ApplicationController
 
     redirect_to schools_path
   end
+
 
   private
 

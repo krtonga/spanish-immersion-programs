@@ -1,0 +1,10 @@
+  <%= form_for @course do |f| %>
+
+    Name of class: <%= f.text_field :name %><br />
+    Describe the class: <%= f.text_area :description %><br />
+    Hours per Week: <%= f.text_field :hrs_per_wk %><br />
+    Price per Week: <%= f.text_field :price %><br />
+    Homestay included: <%= f.text_field :homestay_incl %><br />
+    Price change over time: <%= f.text_area :price_change %><br />
+
+  <% end %>

@@ -2,6 +2,17 @@
   <div class="intro">
     <div class="top"></div>
 
+    <div class="wrapA">
+      <% @photo_urls.each do |url| %>
+      <img class="flickr_photo" src="<%= url %>" alt="">
+      <% end %>
+
+
+    </div>
+  <div class="city" >
+    <h1>< <%= @school.city %> ></h1><br />
+    <p><em>/ <%= @school.name %> </em></p>
+  </div>
     <div class="header">
       <a href="/schools"> HOME</a>
       <a href=<%= maestros_path %>> MAESTRO LOG-IN</a>
@@ -47,7 +58,8 @@
 
 
        <h2>< THE COURSES ></h2>
-       <%= link_to "link text...", :action => "index" %> <table>
+       <a href="/schools/<%= @school.id %>/courses/new">Make New Course</a>
+        <table>
           <tr>
             <th># of Folks -</td>
             <th> Name -</th>
@@ -70,9 +82,6 @@
                 <td><%= course.name %></td>
                 <td><%= course.hrs_per_wk %></td>
                 <td>$<%= course.price %></td><br>
-                <td>
-                  DEL
-                </td>
 
               <td>$105</td>
               <td class="no_border"> =>   $355/week </td>
@@ -107,4 +116,3 @@
 
 
 <a href="/schools">HOME</a>
-

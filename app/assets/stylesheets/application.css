@@ -27,6 +27,8 @@ h2 {
   max-width: 1100px;
   background-color: white;
   margin: 0 auto;
+  border-radius: 30px;
+
 }
 
 .top {
@@ -35,11 +37,36 @@ h2 {
   background-color: black;
   border-radius: 25px 25px 0px 0px;
 }
+
+.flickr_photo {
+  position:relative;
+  opacity: 0.4;
+  top: -200px;
+  margin: 0 auto;
+}
+
+.wrapA {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.city {
+  position:relative;
+  z-index: 2;
+  background-color: none;
+  top:-100px;
+  height:0px;
+  float: right;
+  line-height: 0px;
+}
+
 .header {
   width: 100%;
   height: 30px;
   background-color: black;
   color: white;
+  display: inline-block;
  }
 
 a.header {
@@ -51,6 +78,7 @@ a.header {
   height: 100%;
   margin: 0 auto;
 }
+
  .wrap {
   width: 363px;
   height: 272px;
@@ -58,7 +86,6 @@ a.header {
   float: left;
 
   vertical-align: middle;
-
  }
 
  .two {

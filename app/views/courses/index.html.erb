@@ -8,7 +8,7 @@
       <td><%= course.hrs_per_wk %></td>
       <td>$<%= course.price %></td><br>
       <td>
-        <form action="/schools/<%= @school_id %>/courses/<%= @course_id %>" method="post">
+        <form action="/schools/<%= course.school.id if course.school %>/courses/<%= course.id %>" method="post">
           <%= token_tag %>
           <input type="hidden" name="_method" value="delete">
           <button type="submit">DEL</button>
