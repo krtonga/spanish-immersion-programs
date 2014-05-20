@@ -40,6 +40,7 @@ h2 {
 
 .flickr_photo {
   position:relative;
+  width:100%;
   opacity: 0.4;
   top: -200px;
   margin: 0 auto;
@@ -92,8 +93,8 @@ a.header {
   margin: 0px 5.5px 0px 5.5px;
  }
 
-img {
-  width: 100%;
+.school {
+  height: 100%;
 
 
  }

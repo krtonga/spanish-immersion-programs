@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  get 'schools/search' => 'schools#search'
+
+
 # resources :cities do
   resources :schools do
     resources :courses
@@ -12,6 +16,8 @@ Rails.application.routes.draw do
   get 'sessions/new' => 'sessions#new', as: 'log-in'
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy', as: 'log-out'
+
+
 
 # end
 

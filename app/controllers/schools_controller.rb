@@ -3,9 +3,12 @@ class SchoolsController < ApplicationController
 #Maestros should only be able to edit a school when maestro[school_id] = school_id
   # before_action :authorize, only: [:edit]
 
+
   def index
     @schools = School.all
+    # @school_search = School.search(params[:search])
   end
+
 
   def new
     @school = School.new
@@ -52,6 +55,12 @@ class SchoolsController < ApplicationController
     Course.delete(params[:id])
 
     redirect_to schools_path
+  end
+
+
+  def search
+     @schools = School.search(params[:col], params[:search])
+     render 'index'
   end
 
 
