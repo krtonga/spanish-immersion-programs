@@ -1,0 +1,14 @@
+<%= link_to "Edit Profile", edit_maestro_path %>
+<%= link_to "All Maestros", maestros_path %>
+
+<br />
+<%= @maestro.email %><br />
+<%= @maestro.phone_number %><br />
+<%= @maestro.history %><br />
+<%= @maestro.teaching_methodology %><br />
+<%= @maestro.other %><br />
+<img src="<%= @maestro.profile_pic %>"><br />
+<%= @maestro.school_id %><br />
+
+
+<%= render 'logged_in' %>

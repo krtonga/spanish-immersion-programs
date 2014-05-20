@@ -1,0 +1,20 @@
+<%= form_for @maestro do |f| %>
+    <h4>PROVIDE CONTACT INFORMATION:</h4>
+      Email:  <%= f.text_field :email %>  <br />
+      Phone-Number: <%= f.text_field :phone_number %>   <br />
+      School ID: <%= f.text_field :school_id %>  <br />
+
+    <h4>FILL OUT YOUR PROFILE:</h4>
+      Profile Picture URL: <%= f.text_field :profile_pic %>   <br />
+      History: <%= f.text_area :history %>  <br />
+      Teaching Methodology: <%= f.text_area :teaching_methodology %>  <br />
+      Other Infomration: <%= f.text_area :other %>  <br />
+
+    <h4>SET YOUR PASSWORD:</h4>
+      Password: <%= f.password_field :password %>  <br />
+      Confirm your Password: <%= f.password_field :password_confirmation %>  <br />
+
+  <br />
+  <%= f.submit %>
+
+<% end %>

@@ -11,23 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516193045) do
+ActiveRecord::Schema.define(version: 20140519223253) do
 
   create_table "courses", force: true do |t|
     t.integer  "hrs_per_wk"
-    t.integer  "admin_fee"
-    t.integer  "price_grp"
-    t.integer  "price_priv"
-    t.integer  "per_hr_priv"
     t.integer  "per_hr_grp"
-    t.integer  "max_students"
     t.text     "price_change"
     t.text     "description"
     t.boolean  "homestay_incl"
-    t.integer  "schl_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "school_id"
+    t.integer  "price"
+    t.string   "name"
   end
 
   add_index "courses", ["school_id"], name: "index_courses_on_school_id"
@@ -39,13 +35,26 @@ ActiveRecord::Schema.define(version: 20140516193045) do
     t.integer  "occupancy"
     t.text     "price_change"
     t.text     "description"
-    t.integer  "schl_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "school_id"
   end
 
   add_index "homestays", ["school_id"], name: "index_homestays_on_school_id"
+
+  create_table "maestros", force: true do |t|
+    t.string   "email"
+    t.string   "phone_number"
+    t.text     "history"
+    t.text     "teaching_methodology"
+    t.text     "other"
+    t.string   "profile_pic"
+    t.integer  "school_id"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
   create_table "schools", force: true do |t|
     t.string   "name"
@@ -91,6 +100,12 @@ ActiveRecord::Schema.define(version: 20140516193045) do
     t.string   "img5"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "admin_fee"
+    t.integer  "per_hr_private"
+    t.integer  "per_hr_group"
+    t.integer  "max_students_per_class"
+    t.string   "phone"
+    t.string   "email"
   end
 
 end

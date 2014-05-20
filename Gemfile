@@ -42,3 +42,4 @@ end
 gem 'pry'
 gem 'pry-nav'
 gem 'rails_12factor'
+gem 'bcrypt', '~> 3.1.7'

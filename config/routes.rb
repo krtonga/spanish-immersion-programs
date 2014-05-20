@@ -5,6 +5,14 @@ Rails.application.routes.draw do
     resources :courses, only: [:new, :create]
     resources :homestays, only: [:new, :create]
   end
+
+  resources :maestros do
+  end
+
+  get 'sessions/new' => 'sessions#new', as: 'log-in'
+  post 'sessions' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy', as: 'log-out'
+
 # end
 
   # The priority is based upon order of creation: first created -> highest priority.

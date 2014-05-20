@@ -1,0 +1,19 @@
+<h1>You are logged in!</h1>
+
+<h2>What do you want to do now?</h2>
+
+<ul>
+  <li>
+    Edit your profile.
+      <%= link_to "Maestro Profile", maestro_path(current_user) %>
+  </li>
+  <li>
+    Edit school information.
+      <%= link_to "Maestro School", school_path(current_user.school_id)%>
+  </li>
+    <li>
+    Browse all schools.
+      <%= link_to "All Schools", schools_path %>
+  </li>
+</ul>
+

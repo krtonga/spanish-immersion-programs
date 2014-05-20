@@ -1,18 +1,23 @@
 
   <div class="intro">
     <div class="top"></div>
+
     <div class="header">
       <a href="/schools"> HOME</a>
+      <a href=<%= maestros_path %>> MAESTRO LOG-IN</a>
+      <%= link_to "EDIT", edit_school_path %>
     </div>
+
     <div class="photos">
-      <img src="<%= @school.img4 %>">
-      <img src="<%= @school.img5 %>">
-      <img src="<%= @school.img4 %>">
+      <div class="wrap"><img src="<%= @school.img4 %>"></div>
+      <div class="wrap two"><img src="<%= @school.img5 %>"></div>
+      <div class="wrap"><img src="<%= @school.img4 %>"></div>
     </div>
 
     <div class="left">
       <h2>
         < <%= @school.name.upcase %>! >
+
       </h2>
 
       <%= @school.city %> <br />
@@ -26,12 +31,13 @@
 
 
     <div class="courses">
+      <div class="header"></div>
+    </div>
 
-          <div class="header"></div>
-
+  <div class="courses">
       <div class="left text_left">
-        Administrative Fee: $0 </br>
-        Max Students / Class:
+        Administrative Fee: $<%= @school.admin_fee %> </br>
+        Max Students / Class: <%= @school.max_students_per_class %>
         <h3><em>Specialized Courses:</em></h3>
         <ul>
           <li> CHILDREN </li>
@@ -44,24 +50,37 @@
        <%= link_to "link text...", :action => "index" %> <table>
           <tr>
             <th># of Folks -</td>
+            <th> Name -</th>
             <th> Hours/Week -</td>
             <th> Price USD -</td>
             <th> Homestay</td>
           </tr>
           <tr>
             <td><em>Private</em></td>
+            <td>Lesson</td>
             <td>/hr</td>
-            <td>$17</td>
+            <td>$<%= @school.per_hr_private %></td>
             <td>none</td>
             <td class="no_border"> =>   variable/week </td>
           </tr>
-          <tr>
-            <td><em>Group</em></td>
-            <td>20</td>
-            <td>$250</td>
-            <td>$105</td>
-            <td class="no_border"> =>   $355/week </td>
-          </tr>
+              <% @school.courses.each do |course| %>
+              <tr>
+
+                <td><em>Group</em></td>
+                <td><%= course.name %></td>
+                <td><%= course.hrs_per_wk %></td>
+                <td>$<%= course.price %></td><br>
+
+              <td>$105</td>
+              <td class="no_border"> =>   $355/week </td>
+              <td class="no_border">
+                <form action="/schools/<%= @school.id/course/<%= @course.id %> %>" method="post">
+                <%= token_tag %>
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit">DELETE</button>
+              </form>
+            </tr>
+          <% end %>
         </table>
 
       </div>

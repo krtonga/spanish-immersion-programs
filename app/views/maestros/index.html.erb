@@ -1,0 +1,23 @@
+<h2>Welcome</h2>
+
+<% if current_user %>
+  <p>
+    <%= current_user.email %> ... is logged in
+  </p>
+  <%= link_to "Log-Out", log_out_path, method: :delete %>
+  <%= render "logged_in" %>
+<% else %>
+  <%= link_to "Log-In", log_in_path %>
+  <%= link_to "Sign-Up", "/maestros/new" %>
+<% end %>
+
+<h1>List of all 'Maestros'</h1>
+
+<ul>
+  <% @maestros.each do |maestro| %>
+    <li>
+      <%= maestro.email %>
+    </li>
+  <% end %>
+</ul>
+
