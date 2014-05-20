@@ -9,9 +9,9 @@
     </div>
 
     <div class="photos">
-      <div class="wrap"><img src="<%= @school.img4 %>"></div>
-      <div class="wrap two"><img src="<%= @school.img5 %>"></div>
-      <div class="wrap"><img src="<%= @school.img4 %>"></div>
+      <div class="wrap"><img src="<%= @school.img3 %>"></div>
+      <div class="wrap two"><img src="<%= @school.img4 %>"></div>
+      <div class="wrap"><img src="<%= @school.img5 %>"></div>
     </div>
 
     <div class="left">
@@ -70,15 +70,14 @@
                 <td><%= course.name %></td>
                 <td><%= course.hrs_per_wk %></td>
                 <td>$<%= course.price %></td><br>
+                <td>
+                  DEL
+                </td>
 
               <td>$105</td>
               <td class="no_border"> =>   $355/week </td>
               <td class="no_border">
-                <form action="/schools/<%= @school.id/course/<%= @course.id %> %>" method="post">
-                <%= token_tag %>
-                <input type="hidden" name="_method" value="delete">
-                <button type="submit">DELETE</button>
-              </form>
+
             </tr>
           <% end %>
         </table>

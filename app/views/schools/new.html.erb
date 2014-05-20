@@ -1,19 +1,5 @@
 <h1>Create a new school! </h1>
 
-<%= form_for @school do |f| %>
-   <h3>BASIC INFO</h3>
-  Name: <%= f.text_field              :name %> <br />
-  Website: <%= f.text_field           :website %> <br />
-  City: <%= f.text_field              :city %> <br />
-  Address: <%= f.text_field           :address %> <br />
-  Accreditation: <%= f.text_area      :accreditation %> <br />
+<%= render 'form_basic' %>
 
- <h3>FULLER DESCRIPTIONS</h3>
-  Summary: <%= f.text_area            :summary %> <br />
 
-   <h3>BASIC INFO</h3>
-  ImageURL: <%= f.text_field          :img4 %> <br />
-  ImageURL: <%= f.text_field          :img5 %> <br />
-
-  <%= f.submit %>
-<% end %>

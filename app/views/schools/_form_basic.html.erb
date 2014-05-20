@@ -4,6 +4,8 @@
   Website: <%= f.text_field       :website %> <br />
   City: <%= f.text_field          :city %> <br />
   Address: <%= f.text_field       :address %> <br />
+  Email: <%= f.text_field         :email %> <br />
+  Phone: <%= f.text_field         :phone %> <br />
 
   <h3>FULLER DESCRIPTIONS</h3>
   Summary: <%= f.text_area        :summary %> <br />
@@ -14,18 +16,19 @@
   ImageURL: <%= f.text_field      :img5 %> <br />
 
   <h3>COURSE INFORMATION</h3>
-  Administrative Fee: <%= f.text_field :admin_fee %>
-  Price per Hour Private Lessons: <%= f.text_field :per_hr_private %>
-  Price per Hour Group Lessons: <%= f.text_field :per_hr_group %>
-  Maximum Students per Class: <%= f.text_field :max_students_per_class %>
+  Administrative Fee: <%= f.text_field :admin_fee %><br />
+  Price per Hour Private Lessons: <%= f.text_field :per_hr_private %><br />
+  Price per Hour Group Lessons: <%= f.text_field :per_hr_group %><br />
+  Maximum Students per Class: <%= f.text_field :max_students_per_class %><br />
 
+  <h3>WHAT IS YOUR MOST POPULAR CLASS?</h3>
   <%= f.fields_for :course do |cf| %>
-    Name of class: <%= cf.text_field :name %>
-    Describe the class: <%= cf.text_area :description %>
-    Hours per Week: <%= cf.text_field :hrs_per_wk %>
-    Price per Week: <%= cf.text_field :price %>
-    Homestay included: <%= cf.text_field :homestay_incl %>
-    Price change over time: <%= cf.text_area :price_change %>
+    Name of class: <%= cf.text_field :name %><br />
+    Describe the class: <%= cf.text_area :description %><br />
+    Hours per Week: <%= cf.text_field :hrs_per_wk %><br />
+    Price per Week: <%= cf.text_field :price %><br />
+    Homestay included: <%= cf.text_field :homestay_incl %><br />
+    Price change over time: <%= cf.text_area :price_change %><br />
   <% end %>
 
   <%= f.submit %>

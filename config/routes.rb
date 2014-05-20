@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
 # resources :cities do
   resources :schools do
-    resources :courses, only: [:new, :create]
-    resources :homestays, only: [:new, :create]
+    resources :courses
+    resources :homestays
   end
 
   resources :maestros do

@@ -1,0 +1,19 @@
+<h1>Courses </h1>
+
+<table >
+  <% @courses.each do |course| %>
+    <tr>
+      <td><em>Group</em></td>
+      <td><%= course.name %></td>
+      <td><%= course.hrs_per_wk %></td>
+      <td>$<%= course.price %></td><br>
+      <td>
+        <form action="/schools/<%= @school_id %>/courses/<%= @course_id %>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">DEL</button>
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</table>
