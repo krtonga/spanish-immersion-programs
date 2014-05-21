@@ -6,17 +6,18 @@
       <% @photo_urls.each do |url| %>
       <img class="flickr_photo" src="<%= url %>" alt="">
       <% end %>
-
-
     </div>
-  <div class="city" >
-    <h1>< <%= @school.city %> ></h1><br />
-    <p><em>/ <%= @school.name %> </em></p>
-  </div>
+
+    <div class="city" >
+      <h1>< <%= @school.city %> ></h1><br />
+      <p><em>/ <%= @school.name %> </em></p>
+    </div>
+
     <div class="header">
       <a href="/schools"> HOME</a>
       <a href=<%= maestros_path %>> MAESTRO LOG-IN</a>
-      <%= link_to "EDIT", edit_school_path %>
+      <div class="administrative maestro button"><%= link_to "EDIT", edit_school_path %></div>
+      <div class="administrative maestro button"><%= link_to "LOG-OUT", edit_school_path %></div>
     </div>
 
     <div class="photos">
@@ -40,10 +41,10 @@
       <div class="box"><b>LEARN MORE</b></div>  <br />
     </div>
 
-
     <div class="courses">
       <div class="header"></div>
     </div>
+  </div>
 
   <div class="courses">
       <div class="left text_left">
@@ -58,8 +59,7 @@
 
 
        <h2>< THE COURSES ></h2>
-      <%= link_to "New Course", edit_school_path %>
-        <table>
+      <table>
           <tr>
             <th># of Folks -</td>
             <th> Name -</th>
@@ -77,28 +77,25 @@
           </tr>
               <% @school.courses.each do |course| %>
               <tr>
-
                 <td><em>Group</em></td>
                 <td><%= course.name %></td>
                 <td><%= course.hrs_per_wk %></td>
                 <td>$<%= course.price %></td><br>
-
               <td>$105</td>
               <td class="no_border"> =>   $355/week </td>
               <td class="no_border">
-
             </tr>
           <% end %>
         </table>
-
+       <div class="administrative maestro button"><%= link_to "New Course", edit_school_path %></div>
       </div>
       <br>
+    <hr>
 
 
 
-    </div><hr>
-  </div>
 
+<!-- THIS IS THE WEBSITE IN PAGE VIEW -->
 
   <div class="website">
 
@@ -116,3 +113,138 @@
 
 
 <a href="/schools">HOME</a>
+
+
+<!-- THIS IS THE COMMENT SECTION -->
+  <div="new_comment">
+    <div class="header">
+    </div>
+
+    <div class="wrapA">
+      <img class="flickr_photo" src="<%= @photo_url2 %>" alt="">
+    </div>
+
+    <div class="city" >
+      <h1>< COMMENTS for <%= @school.name %> ></h1><br />
+      <p><em> /comment-count:                 /rating:</em></p>
+    </div>
+
+    <div class="header">
+      <a href="/schools"> HOME</a>
+    </div>
+
+
+    <div>
+      <%= form_for @comment, url: school_comments_path({school_id: @school.id}) do |cf| %>
+          <%= cf.label :user_name%>
+          <%= cf.text_field :user_name%>
+          <%= cf.label :email%>
+          <%= cf.text_field :email%>
+          <%= cf.label :source%>
+          <%= cf.text_field :source%><br />
+          <%= cf.label :message%>
+          <%= cf.text_area :message%>
+          <%= cf.submit %>
+      <% end %>
+    </div>
+
+    <div class="rw-ui-container"></div>
+
+  <hr>
+
+  <div class="list">
+    <table class="comment_table">
+      <%= @school.comments.each do |comment| %>
+      <tr>
+        <td>
+          <%= comment.user_name %>
+        </td>
+      </tr>
+      <% end %>
+
+    </table>
+
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- START: Livefyre Embed -->
+<div id="livefyre-comments"></div>
+<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+<script type="text/javascript">
+(function () {
+    var articleId = fyre.conv.load.makeArticleId(null);
+    fyre.conv.load({}, [{
+        el: 'livefyre-comments',
+        network: "livefyre.com",
+        siteId: "359214",
+        articleId: articleId,
+        signed: false,
+        collectionMeta: {
+            articleId: articleId,
+            url: fyre.conv.load.makeCollectionUrl(),
+        }
+    }], function() {});
+}());
+</script>
+<!-- END: Livefyre Embed -->
+
+
+
+
+
+
+
+
+
+<!-- THIS MAKES THE STAR WIDGET WORK!! -->
+
+<script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "173546",
+            uid: "726ef8fd3e8ae6ef5e42470289677e07",
+            source: "website",
+            options: {
+                "style": "flat_yellow"
+            }
+        });
+        RW.render();
+    };
+
+
+
+    // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() +
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = (-1 < l.search.indexOf("DBG=") ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+}(document, new Date(), "script", "rating-widget.com/"));</script>

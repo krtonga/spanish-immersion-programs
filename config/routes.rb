@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 # resources :cities do
   resources :schools do
     resources :courses
+    resources :comments, only: [:create]
     resources :homestays
   end
 

@@ -1,73 +1,69 @@
-<h1>Ready?</h1>
-<a href="/schools/new">New School</a>
+<div class="top"></div>
+<div class="title">
+  <h1>< Spanish Immersion ></h1>
+</div>
 
-<%= form_tag schools_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
 
+
+<div class="header">      <div class="administrative button"><a href="/schools/new">New School</a></div></div>
+
+<div class="search">
+  <h3>Search by Name</h3>
+  <form action="/schools/search" method='get'>
+    <input type="hidden" name='col' value='name'>
+    <input type="text" name='search'>
+    <input type="submit">
+  </form>
+
+
+  <h3>Search by City</h3>
+  <form action="/schools/search" method='get'>
+    <input type="hidden" name='col' value='city'>
+    <input type="text" name='search'>
+    <input type="submit">
+  </form>
+</div>
+
+
+<div class ="listing">
 <h2>< THE COURSES ></h2>
-<table>
-    <tr>
-      <th>School </td>
-      <th> City </th>
-      <th> Courses </td>
-    </tr>
-  <% @schools.each do |school| %>
-    <tr>
-      <td><a href= <%= school_path(school) %> ><em><%= school.name %></em></a></td>
-      <td><%= school.city %></td>
-      <td>
-        <% school.courses.each do |course| %>
-        <li> <%= course.name %> ( <%= course.hrs_per_wk %>hrs/wk => $<%= course.price %> )</li>
-        <% end %>
-      </td>
-    </tr>
-  <%end %>
-</table>
-
+  <table>
+      <tr>
+        <th>School </td>
+        <th> City </th>
+        <th> Courses </td>
+      </tr>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><a href= <%= school_path(school) %> ><em><%= school.name %></em></a></td>
+        <td><%= school.city %></td>
+        <td>
+          <% school.courses.each do |course| %>
+          <li> <%= course.name %> ( <%= course.hrs_per_wk %>hrs/wk => $<%= course.price %> )</li>
+          <% end %>
+        </td>
+      </tr>
+    <%end %>
+  </table>
+</div>
 <br />
 <hr>
 
-<% @schools.each do |school| %>
-<ul>
-  <li>
-    <a href="<%= school.website %>"><%= school.name %></a>
+<div class="administrative list">
+  <% @schools.each do |school| %>
+    <ul>
+      <li>
+        <a href="<%= school.website %>"><%= school.name %></a>
 
-    <form action="/schools/<%= school.id %>" method="post">
-      <%= token_tag %>
-      <input type="hidden" name="_method" value="delete">
-      <button type="submit">DELETE</button>
-    </form>
+        <form action="/schools/<%= school.id %>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">DELETE</button>
+        </form>
 
-    <a href="/schools/<%= school.id %>">SHOW</a>
-    <a href="/schools/<%= school.id %>/edit">EDIT</a>
-  </li><br>
-</ul>
-
-<% end %>
-
-
-
-
-
-
-
-
-<h3>Search by Name</h3>
-<form action="/schools/search" method='get'>
-  <input type="hidden" name='col' value='name'>
-  <input type="text" name='search'>
-  <input type="submit">
-</form>
-
-
-<h3>Search by City</h3>
-<form action="/schools/search" method='get'>
-  <input type="hidden" name='col' value='city'>
-  <input type="text" name='search'>
-  <input type="submit">
-</form>
-
+        <a href="/schools/<%= school.id %>">SHOW</a>
+        <a href="/schools/<%= school.id %>/edit">EDIT</a>
+      </li><br>
+    </ul>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+    <%= form_for @school do |f| %>
+      <%= f.fields_for :comments do |fc| %>
+        <%= cf.label :name%>
+        <%= cf.text_field :name%>
+        <%= cf.label :email%>
+        <%= cf.text_field :email%>
+        <%= cf.label :source%>
+        <%= cf.text_field :source%>
+        <%= cf.label :message%>
+        <%= cf.text_area :message%>
+      <%= end %>
+    <%= end %>
