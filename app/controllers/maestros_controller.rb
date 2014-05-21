@@ -1,7 +1,7 @@
 class MaestrosController < ApplicationController
 
   def index
-    @maestro = current_user
+    @maestro = current_maestro
     @maestros = Maestro.all
   end
 

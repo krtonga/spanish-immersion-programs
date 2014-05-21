@@ -29,7 +29,6 @@ h2 {
   background-color: white;
   margin: 0 auto;
   border-radius: 30px;
-
 }
 
 .top {
@@ -65,10 +64,12 @@ a.header {
 
 .search {
   float: left;
+  padding: 15px;
 }
 
 .listing {
   float: right;
+  padding: 15px;
 }
 
 .administrative {
@@ -173,7 +174,7 @@ a.header {
   text-align: left;
  }
 
- table.courses, tr, td{
+table.courses, tr, td{
   border: 2px dotted black;
   padding: 5px;
  }
@@ -204,6 +205,7 @@ a.header {
   left: 26%;
   z-index:1;
 }
+
 .button {
   height: 50px;
   width: 50px;
@@ -213,3 +215,43 @@ a.header {
   border-radius: 50px;
   text-align: center;
 }
+
+
+.new_comment {
+  background-color: lightgray;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.large {
+  font-size: 2em;
+}
+
+.fa-child {
+  padding: 10px;
+  margin: 20px;
+  border: 10px solid black;
+  border-radius: 40px;
+  background-color: yellow;
+  float: left;
+  height: 100%;
+}
+
+.rw-ui-container {
+  float:right;
+  margin: 20px;
+}
+
+.a_comment {
+  padding: 20px 20px 20px 120px;
+}
+
+
+
+
+
+.bottom {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  border-radius: 0px 0px 25px 25px;

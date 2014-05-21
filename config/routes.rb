@@ -7,11 +7,14 @@ Rails.application.routes.draw do
 # resources :cities do
   resources :schools do
     resources :courses
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
     resources :homestays
   end
 
   resources :maestros do
+  end
+
+  resources :administrators do
   end
 
   get 'sessions/new' => 'sessions#new', as: 'log-in'

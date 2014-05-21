@@ -5,7 +5,9 @@
 
 
 
-<div class="header">      <div class="administrative button"><a href="/schools/new">New School</a></div></div>
+<div class="header">
+  <div class="administrative button"><a href="/schools/new">New School</a></div>
+</div>
 
 <div class="search">
   <h3>Search by Name</h3>
@@ -35,7 +37,9 @@
       </tr>
     <% @schools.each do |school| %>
       <tr>
-        <td><a href= <%= school_path(school) %> ><em><%= school.name %></em></a></td>
+        <td><a href= <%= school_path(school) %> ><em><%= school.name %></em></a> <br />
+          <div class="rw-ui-container rw-urid-<%= @school_id %>"></div>
+        </td>
         <td><%= school.city %></td>
         <td>
           <% school.courses.each do |course| %>
@@ -47,7 +51,8 @@
   </table>
 </div>
 <br />
-<hr>
+
+<div class="header"></div>
 
 <div class="administrative list">
   <% @schools.each do |school| %>
@@ -67,3 +72,15 @@
     </ul>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+<!-- THESE ARE THE STAR RATING SYSTEMS -->
+<%= render 'rating_widget' %>

@@ -5,11 +5,11 @@
 <ul>
   <li>
     Edit your profile.
-      <%= link_to "Maestro Profile", maestro_path(current_user) %>
+      <%= link_to "Maestro Profile", maestro_path(current_maestro) %>
   </li>
   <li>
     Edit school information.
-      <%= link_to "Maestro School", school_path(current_user.school_id)%>
+      <%= link_to "Maestro School", school_path(current_maestro.school_id)%>
   </li>
     <li>
     Browse all schools.

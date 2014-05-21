@@ -4,11 +4,22 @@ class CommentsController < ApplicationController
     @school = School.find(params[:school_id])
     new_comment = Comment.create(comment_params)
     @school.comments << new_comment
-    redirect_to school_path(:school)
+    redirect_to school_path(@school.id)
   end
 
+  def destroy
+    @school = School.find(params[:school_id])
+    @school_id = @school.id
+
+    Comment.delete(params[:id])
+
+    redirect_to school_path(@school)
+  end
+
+  private
+
   def comment_params
-    params[:school][:comment].permit(:user_name, :email, :source, :message)
+    params.require(:comment).permit(:user_name, :email, :source, :message)
   end
 
 end

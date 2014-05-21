@@ -1,8 +1,8 @@
 <h2>Welcome</h2>
 
-<% if current_user %>
+<% if current_maestro %>
   <p>
-    <%= current_user.email %> ... is logged in
+    <%= current_maestro.email %> ... is logged in
   </p>
   <%= link_to "Log-Out", log_out_path, method: :delete %>
   <%= render "logged_in" %>
