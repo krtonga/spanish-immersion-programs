@@ -4,6 +4,10 @@ class SchoolsController < ApplicationController
   # before_action :authorize, only: [:edit]
 
 
+  def root
+    @schools_path = '/schools'
+  end
+
   def index
     @schools = School.all
   end
@@ -25,7 +29,7 @@ class SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
-    @photo_urls = FlickrHelper.flickr_photos(@school).sample(2)
+    @photo_urls = FlickrHelper.flickr_photos(@school).sample(3)
     @photo_url = FlickrHelper.flickr_photos(@school).first
     @photo_url2 = FlickrHelper.flickr_photos(@school).last
     @comment = Comment.new

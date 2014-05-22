@@ -2,7 +2,7 @@
   <div class="intro">
     <div class="top">
       <div class="margin">
-        <button class="nav" action="<%= schools_path %>">HOME</button>
+        <a href="<%= schools_path %>"><button class="nav">HOME</button></a>
         <button class="nav" action="<%= schools_path %>">FAQ</button>
         <button class="nav" action="<%= schools_path %>">USEFUL LINKS</button>
         <button class="nav" action="<%= schools_path %>">CONTACT</button>
@@ -65,8 +65,11 @@
         Max Students / Class: <%= @school.max_students_per_class %>
         <h3><em>Specialized Courses:</em></h3>
         <ul>
-          <li> CHILDREN </li>
-          <li> PROFESSIONALS </li>
+     <!--      <li> CHILDREN </li>
+          <li> PROFESSIONALS </li> -->
+          <li>
+            <em>Coming Soon!!</em>
+          </li>
         </ul>
       </div>
 

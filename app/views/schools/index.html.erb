@@ -2,9 +2,9 @@
   <div class="head">
     <div class="header">
       <button class="nav" action="<%= schools_path %>">HOME</button>
-      <button class="nav" action="<%= schools_path %>">FAQ</button>
-      <button class="nav" action="<%= schools_path %>">USEFUL LINKS</button>
-      <button class="nav" action="<%= schools_path %>">CONTACT</button>
+      <a href="/faq"><button class="nav">FAQ</button></a>
+      <a href="/links"><button class="nav" action="<%= schools_path %>">USEFUL LINKS</button></a>
+      <a href="/contact"><button class="nav" action="<%= schools_path %>">CONTACT</button></a>
     </div>
 
     <div class="title">
@@ -35,18 +35,19 @@
       <p>We live in an increasingly bi-lingual society. Turn your next adventure in Mexico into a true learning experience. Learn through immersion. This site aims to make your choice easier, by helping you choose the right school for you. Check out the school pages, and search through the many options!
       </p>
     </div>
+  </div>
 
+  <div class="about header">
 
-
-</div><div class="about header"></div>
-<div class= "find_it about">
-  <div class="search">
-    <h3>Search by Name</h3>
-    <form action="/schools/search" method='get'>
-      <input type="hidden" name='col' value='name'>
-      <input type="text" name='search'>
-      <input type="submit">
-    </form>
+    </div>
+  <div class= "find_it about">
+    <div class="search">
+      <h3>Search by Name</h3>
+      <form action="/schools/search" method='get'>
+        <input type="hidden" name='col' value='name'>
+        <input type="text" name='search'>
+        <input type="submit">
+      </form>
 
 
     <h3>Search by City</h3>
@@ -57,7 +58,7 @@
     </form>
   </div>
 
-  <div class="map "></div>
+  <div class="map "><img src="http://maps.googleapis.com/maps/api/staticmap?center=Mexico&zoom=5&size=750x550&&maptype=satellite&sensor=true_or_false" alt=""></div>
 </div>
 
 <div class="header about"></div>
@@ -87,7 +88,7 @@
 </div>
 <br />
 
-<div class="header about"></div>
+<div class="header about"><div class="administrative button"><a href="/schools/new">New School</a></div></div>
 
 <div class="administrative list about">
   <% @schools.each do |school| %>

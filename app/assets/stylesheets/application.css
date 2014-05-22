@@ -23,11 +23,34 @@ h2 {
   font-size: 1.5em;
 }
 
+.black {
+  background-color: black;
+}
+
+.country {
+  height: 150px;
+  width:150px;
+  border:10px solid white;
+  border-radius: 100px;
+  float: left;
+  overflow: hidden;
+}
+
+.root {
+  width: 200%;
+  margin: 0 auto;
+  color: white;
+}
+
 .background {
   max-width: 1100px;
   background-color: white;
   margin: 0 auto;
   border-radius: 30px;
+}
+
+.narrow {
+  width: 300px;
 }
 
 .top {
@@ -121,10 +144,6 @@ button.nav {
   margin: 5px;
 }
 
-.more {
-  postion: relative;
-  left: 400px;
-}
 
 .listing {
   margin: 0 auto;
