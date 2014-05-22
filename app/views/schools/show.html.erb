@@ -1,12 +1,12 @@
 
   <div class="intro">
     <div class="top">
-      <div class="margin">
-        <a href="<%= schools_path %>"><button class="nav">HOME</button></a>
-        <button class="nav" action="<%= schools_path %>">FAQ</button>
-        <button class="nav" action="<%= schools_path %>">USEFUL LINKS</button>
-        <button class="nav" action="<%= schools_path %>">CONTACT</button>
-      </div>
+    <div class="margin">
+      <a href="/schools"><button class="nav">HOME</button></a>
+      <a href="/faq"><button class="nav">FAQ</button></a>
+      <a href="/links"><button class="nav" action="<%= schools_path %>">USEFUL LINKS</button></a>
+      <a href="/contact"><button class="nav" action="<%= schools_path %>">CONTACT</button></a>
+    </div>
 <div class="rw-ui-container rw-urid-<%= @school_id %>"></div>
     </div>
     <div class="header">
@@ -98,7 +98,7 @@
                 <td><%= course.hrs_per_wk %></td>
                 <td>$<%= course.price %></td><br>
               <td><%= @school.homestay_price%></td>
-              <td class="no_border"> =>   <%= course.price + @school.homestay_price %></td>
+              <td class="no_border"> =>   <%= course.price + @school.homestay_price rescue 999 %></td>
               <td class="no_border">
             </tr>
           <% end %>
