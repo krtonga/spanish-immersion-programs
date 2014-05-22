@@ -7,8 +7,8 @@ class CreateHomestays < ActiveRecord::Migration
       t.integer :occupancy
       t.text :price_change
       t.text :description
+      t.references :school
 
-      t.integer :schl_id
       t.timestamps
     end
   end

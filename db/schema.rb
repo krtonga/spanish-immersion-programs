@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521205056) do
+ActiveRecord::Schema.define(version: 20140521233952) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "administrators", force: true do |t|
     t.string   "name"
@@ -33,11 +36,10 @@ ActiveRecord::Schema.define(version: 20140521205056) do
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["school_id"], name: "index_comments_on_school_id"
+  add_index "comments", ["school_id"], name: "index_comments_on_school_id", using: :btree
 
   create_table "courses", force: true do |t|
     t.integer  "hrs_per_wk"
-    t.integer  "per_hr_grp"
     t.text     "price_change"
     t.text     "description"
     t.boolean  "homestay_incl"
@@ -45,10 +47,9 @@ ActiveRecord::Schema.define(version: 20140521205056) do
     t.datetime "updated_at"
     t.integer  "school_id"
     t.integer  "price"
-    t.string   "name"
   end
 
-  add_index "courses", ["school_id"], name: "index_courses_on_school_id"
+  add_index "courses", ["school_id"], name: "index_courses_on_school_id", using: :btree
 
   create_table "homestays", force: true do |t|
     t.integer  "price_wk"
@@ -62,9 +63,10 @@ ActiveRecord::Schema.define(version: 20140521205056) do
     t.integer  "school_id"
   end
 
-  add_index "homestays", ["school_id"], name: "index_homestays_on_school_id"
+  add_index "homestays", ["school_id"], name: "index_homestays_on_school_id", using: :btree
 
   create_table "maestros", force: true do |t|
+    t.string   "name"
     t.string   "email"
     t.string   "phone_number"
     t.text     "history"
@@ -75,7 +77,6 @@ ActiveRecord::Schema.define(version: 20140521205056) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
   end
 
   create_table "schools", force: true do |t|
@@ -122,12 +123,16 @@ ActiveRecord::Schema.define(version: 20140521205056) do
     t.string   "img5"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
+    t.string   "email"
     t.integer  "admin_fee"
     t.integer  "per_hr_private"
     t.integer  "per_hr_group"
     t.integer  "max_students_per_class"
-    t.string   "phone"
-    t.string   "email"
+    t.string   "homestay"
+    t.integer  "homestay_price"
+    t.boolean  "meals_incl"
+    t.integer  "meals_add_price"
   end
 
 end

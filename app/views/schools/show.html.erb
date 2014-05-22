@@ -1,6 +1,8 @@
 
   <div class="intro">
-    <div class="top">      <div class="rw-ui-container rw-urid-<%= @school_id %>"></div></div>
+    <div class="top">
+      <div class="rw-ui-container rw-urid-<%= @school_id %>"></div>
+    </div>
 
     <div class="wrapA">
       <% @photo_urls.each do |url| %>
@@ -30,7 +32,6 @@
     <div class="left">
       <h2>
         < <%= @school.name.upcase %>! >
-
       </h2>
 
       <%= @school.city %> <br />
@@ -41,6 +42,9 @@
       <%= @school.summary %> <br />
       <div class="box"><b>LEARN MORE</b></div>  <br />
     </div>
+
+
+<!-- THIS IS WHERE THE COURSE SECTION STARTS -->
 
     <div class="courses">
       <div class="header"></div>
@@ -82,8 +86,8 @@
                 <td><%= course.name %></td>
                 <td><%= course.hrs_per_wk %></td>
                 <td>$<%= course.price %></td><br>
-              <td>$105</td>
-              <td class="no_border"> =>   $355/week </td>
+              <td><%= @school.homestay_price%></td>
+              <td class="no_border"> =>   <%= course.price + @school.homestay_price %></td>
               <td class="no_border">
             </tr>
           <% end %>

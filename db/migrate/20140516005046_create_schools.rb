@@ -5,6 +5,9 @@ class CreateSchools < ActiveRecord::Migration
       t.string :website
       t.string :city
       t.string :address
+      t.string :phone
+      t.string :email
+
       t.string :founded_by
       t.integer :year_founded
       t.text :accreditation
@@ -34,15 +37,26 @@ class CreateSchools < ActiveRecord::Migration
       t.boolean :teens_prog
       t.boolean :seniors_prog
       t.boolean :professional_prog
-      t.string :prof_prog_descrip
+      t.string  :prof_prog_descrip
       t.boolean :sp_teachers_prog
       t.boolean :distance_edu
-      t.string :distance_descrip
+      t.string  :distance_descrip
       t.boolean :test_prep
+      t.string  :test_prep_descrip
       t.boolean :other_prog
-      t.string :describe
+      t.string  :other_prog_descrip
       t.boolean :disability_accesib
       t.boolean :airport_pickup
+
+      t.integer :admin_fee
+      t.integer :per_hr_private
+      t.integer :per_hr_group
+      t.integer :max_students_per_class
+      t.text    :homestay
+      t.integer :homestay_price
+      t.boolean :meals_incl
+      t.integer :meals_add_price
+
 
       t.string :img1
       t.string :img2

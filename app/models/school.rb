@@ -16,6 +16,10 @@ class School < ActiveRecord::Base
     end
   end
 
+  # def cost
+  #   (self.course.price)+(self.homestay_price)
+  # end
+
 
 
 

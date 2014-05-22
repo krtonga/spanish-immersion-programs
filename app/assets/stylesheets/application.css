@@ -239,7 +239,7 @@ table.courses, tr, td{
 
 .rw-ui-container {
   float:right;
-  margin: 20px;
+  margin: 20px 20px 0px 20px;
 }
 
 .a_comment {

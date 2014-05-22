@@ -31,5 +31,11 @@
     Price change over time: <%= cf.text_area :price_change %><br />
   <% end %>
 
+  <h3>WHAT IS YOUR MOST POPULAR HOMESTAY OPTION?</h3>
+  Describe: <%= f.text_field       :homestay %><br />
+  Price/wk in USD: <%= f.text_field :homestay_price %><br />
+  Check if Meals are included: <%= f.check_box :meals_incl %><br />
+  If not, how much additional cost USD per meal: <%= f.text_field :meals_add_price %><br />
+
   <%= f.submit %>
 <% end %>
