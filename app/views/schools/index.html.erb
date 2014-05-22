@@ -21,10 +21,11 @@
       <div class="administrative button"><a href="/schools/new">Log <br>In</a>
       </div>
     </div>
+
     <!--   <div class="administrative button"><a href="/schools/new">
         New School</a></div> -->
 
-    <div id="hover-div">
+    <div class="hover-div">
       <img class="wordle" src="https://mail.google.com/mail/u/0/?ui=2&ik=a406f72f4c&view=fimg&th=14622e05c2c12117&attid=0.1&disp=inline&realattid=f_hvhr35kf1&safe=1&attbid=ANGjdJ92ZP09u4q92yHp3N3CI6WZOJoVE5na5G_0J08WVAC5hiGuRvxRJB4k1b2qxADdEjhZHy4avvMnWp9UlKneTxO8oOh2VSZcbkwYV37CqfVl5l7NKCTVJpsEXEA&ats=1400744468409&rm=14622e05c2c12117&zw&sz=w539-h773" alt="">
     </div>
 
@@ -38,26 +39,30 @@
 
 
 </div><div class="about header"></div>
+<div class= "find_it about">
+  <div class="search">
+    <h3>Search by Name</h3>
+    <form action="/schools/search" method='get'>
+      <input type="hidden" name='col' value='name'>
+      <input type="text" name='search'>
+      <input type="submit">
+    </form>
 
-<div class="about search">
-  <h3>Search by Name</h3>
-  <form action="/schools/search" method='get'>
-    <input type="hidden" name='col' value='name'>
-    <input type="text" name='search'>
-    <input type="submit">
-  </form>
 
+    <h3>Search by City</h3>
+    <form action="/schools/search" method='get'>
+      <input type="hidden" name='col' value='city'>
+      <input type="text" name='search'>
+      <input type="submit">
+    </form>
+  </div>
 
-  <h3>Search by City</h3>
-  <form action="/schools/search" method='get'>
-    <input type="hidden" name='col' value='city'>
-    <input type="text" name='search'>
-    <input type="submit">
-  </form>
+  <div class="map "></div>
 </div>
 
+<div class="header about"></div>
 
-<div class ="listing">
+<div class ="listing about">
 <h2>< THE COURSES ></h2>
   <table>
       <tr>
@@ -82,9 +87,9 @@
 </div>
 <br />
 
-<div class="header"></div>
+<div class="header about"></div>
 
-<div class="administrative list">
+<div class="administrative list about">
   <% @schools.each do |school| %>
     <ul>
       <li>
@@ -107,10 +112,14 @@
 
 
 
+<div class="me">
+  Please contact me at: <br />
+  kristen.tonga@gmail.com <br />
+  or visit me on: <br />
+</div>
 
 
-
-
+<div class="bottom"></div>
 
 <!-- THESE ARE THE STAR RATING SYSTEMS -->
 <%= render 'rating_widget' %>

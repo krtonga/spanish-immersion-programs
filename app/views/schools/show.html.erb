@@ -1,7 +1,15 @@
 
   <div class="intro">
     <div class="top">
-      <div class="rw-ui-container rw-urid-<%= @school_id %>"></div>
+      <div class="margin">
+        <button class="nav" action="<%= schools_path %>">HOME</button>
+        <button class="nav" action="<%= schools_path %>">FAQ</button>
+        <button class="nav" action="<%= schools_path %>">USEFUL LINKS</button>
+        <button class="nav" action="<%= schools_path %>">CONTACT</button>
+      </div>
+<div class="rw-ui-container rw-urid-<%= @school_id %>"></div>
+    </div>
+    <div class="header">
     </div>
 
     <div class="wrapA">
@@ -24,9 +32,9 @@
     </div>
 
     <div class="photos">
-      <div class="wrap"><img class="school" src="<%= @school.img3 %>"></div>
-      <div class="wrap two"><img class="school" src="<%= @school.img4 %>"></div>
-      <div class="wrap"><img class="school" src="<%= @school.img5 %>"></div>
+      <div class="wrap" style="background-image:url(<%= @school.img3 %>)"></div>
+      <div class="wrap two" style="background-image:url(<%= @school.img4 %>)"></div>
+      <div class="wrap" style="background-image:url(<%= @school.img5 %>)"></div>
     </div>
 
     <div class="left">

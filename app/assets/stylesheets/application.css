@@ -69,8 +69,6 @@ button.nav {
   top: -75px;
 }
 
-
-
 .title {
   background-image:url("https://mail.google.com/mail/u/0/?ui=2&ik=a406f72f4c&view=fimg&th=1461e0db6f88a3c5&attid=0.1&disp=inline&realattid=f_hvgewtij1&safe=1&attbid=ANGjdJ-pjavBT4rijJyjW8YSvtINpQW8d2zVBn2I9XV1mCkleB58FSaWwJfhjILWl_rTAy6jloqMAQfHSB1tw8w0K6bfdFMETBKHLadyxYXJtc7SkKDR3MNQ9G37y2c&ats=1400663554450&rm=1461e0db6f88a3c5&zw&sz=w582-h450");
   background-repeat:no-repeat;
@@ -97,9 +95,9 @@ button.nav {
   background-color: yellow;
 }
 
-wordle:hover .wordle_link {
+/*wordle:hover .wordle_link {
   display:block;
-}
+}*/
 
 .about {
   position:relative;
@@ -111,15 +109,39 @@ wordle:hover .wordle_link {
   padding: 15px;
 }
 
+.find_it {
+  background-color: blanchedalmond;
+  border-radius: 35px;
+}
+
+.map {
+  background-color: lightgray;
+  width: 750px;
+  height: 550px;
+  margin: 5px;
+}
+
+.more {
+  postion: relative;
+  left: 400px;
+}
+
 .listing {
-  float: right;
-  padding: 15px;
+  margin: 0 auto;
+  padding: 40px;
 }
 
 .administrative {
   display: inline-block;
   width: 100%;
 }
+
+.me {
+  text alight: right;
+  background-color: black;
+  color: white;
+}
+
 
 /*SHOW PG*/
 
@@ -157,7 +179,7 @@ wordle:hover .wordle_link {
   height: 272px;
   overflow: hidden;
   float: left;
-
+  background-size: cover;
   vertical-align: middle;
 }
 
@@ -207,7 +229,6 @@ wordle:hover .wordle_link {
 }
 
 .new_course {
-  float:right;
 }
 
  .text_left {
@@ -262,6 +283,10 @@ table.courses, tr, td{
   border-radius: 15px;
 }
 
+textarea#comment_message {
+  width: 725px;
+}
+
 .large {
   font-size: 2em;
 }
@@ -284,7 +309,6 @@ table.courses, tr, td{
 .a_comment {
   padding: 20px 20px 20px 120px;
 }
-
 
 .bottom {
   width: 100%;
