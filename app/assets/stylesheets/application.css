@@ -47,15 +47,17 @@ h2 {
 
 a.nav { color: white; }
 
- button.nav {
+button.nav {
   background-color: black;
   border: 1px solid white;
   color: white;
- }
+}
 
 a.header {
   color: white;
 }
+
+.
 
 .title {
   background-image:url("https://mail.google.com/mail/u/0/?ui=2&ik=a406f72f4c&view=fimg&th=1461e0db6f88a3c5&attid=0.1&disp=inline&realattid=f_hvgewtij1&safe=1&attbid=ANGjdJ-pjavBT4rijJyjW8YSvtINpQW8d2zVBn2I9XV1mCkleB58FSaWwJfhjILWl_rTAy6jloqMAQfHSB1tw8w0K6bfdFMETBKHLadyxYXJtc7SkKDR3MNQ9G37y2c&ats=1400663554450&rm=1461e0db6f88a3c5&zw&sz=w582-h450");
