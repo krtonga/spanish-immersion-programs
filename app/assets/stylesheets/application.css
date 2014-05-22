@@ -45,7 +45,9 @@ h2 {
   display: inline-block;
  }
 
-a.nav { color: white; }
+.head {
+  postion: relative;
+}
 
 button.nav {
   background-color: black;
@@ -53,23 +55,59 @@ button.nav {
   color: white;
 }
 
-a.header {
-  color: white;
+.subdiv {
+  position: relative;
+  top: -260px;
+  z-index: 2;
+  height: 0px;
+  line-height: 0px;
+  margin: 20px;
 }
+
+.index {
+  position: relative;
+  top: -75px;
+}
+
+
 
 .title {
   background-image:url("https://mail.google.com/mail/u/0/?ui=2&ik=a406f72f4c&view=fimg&th=1461e0db6f88a3c5&attid=0.1&disp=inline&realattid=f_hvgewtij1&safe=1&attbid=ANGjdJ-pjavBT4rijJyjW8YSvtINpQW8d2zVBn2I9XV1mCkleB58FSaWwJfhjILWl_rTAy6jloqMAQfHSB1tw8w0K6bfdFMETBKHLadyxYXJtc7SkKDR3MNQ9G37y2c&ats=1400663554450&rm=1461e0db6f88a3c5&zw&sz=w582-h450");
   background-repeat:no-repeat;
   background-size: 1120px;
-  height: 250px;
+  height: 275px;
   opacity: 0.7;
   position: relative;
-  top: -21px;
+  top: -23px;
   text-align: right;
 }
 
+.wordle {
+  float: right;
+  position: relative;
+  width: 80%;
+  top: -80px;
+  right: -15px;
+  opacity: .9;
+}
+
+.wordle-element {
+  margin-left: 30px;
+  border: 2px solid black;
+  background-color: yellow;
+}
+
+wordle:hover .wordle_link {
+  display:block;
+}
+
+.about {
+  position:relative;
+  top: -440px;
+}
+
 .search {
-  float: left;
+  float: right;
   padding: 15px;
 }
 
@@ -215,8 +253,8 @@ table.courses, tr, td{
   float: right;
   border-radius: 50px;
   text-align: center;
+  font-family: "Special Elite";
 }
-
 
 .new_comment {
   background-color: lightgray;

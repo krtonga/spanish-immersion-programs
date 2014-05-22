@@ -1,27 +1,45 @@
 <div class="top"></div>
+  <div class="head">
+    <div class="header">
+      <button class="nav" action="<%= schools_path %>">HOME</button>
+      <button class="nav" action="<%= schools_path %>">FAQ</button>
+      <button class="nav" action="<%= schools_path %>">USEFUL LINKS</button>
+      <button class="nav" action="<%= schools_path %>">CONTACT</button>
+    </div>
 
-<div class="header">
-  <button class="nav" action="<%= schools_path %>">HOME</button>
-  <button class="nav" action="<%= schools_path %>">FAQ</button>
-  <button class="nav" action="<%= schools_path %>">USEFUL LINKS</button>
-  <button class="nav" action="<%= schools_path %>">CONTACT</button>
-</div>
+    <div class="title">
+      <h1>< Spanish Immersion ></h1>
+    </div>
 
-<div ="subdiv"
-<p class="sub1"> > About </p>
-<p class="sub2"> > Search </p>
-<p class="sub3"> > Listing </p>
-</div>
+    <div class="subdiv">
+      <h4 class="sub1"> . About </h4>
+      <h4 class="sub2"> . . . Search </h4>
+      <h4 class="sub3"> . . . . . Listing </h4>
+    </div>
 
-<div class="title">
-  <h1>< Spanish Immersion ></h1>
-</div>
+    <div class="header index">
+      <div class="administrative button"><a href="/schools/new">Log <br>In</a>
+      </div>
+    </div>
+    <!--   <div class="administrative button"><a href="/schools/new">
+        New School</a></div> -->
 
-<div class="header">
-  <div class="administrative button"><a href="/schools/new">New School</a></div>
-</div>
+    <div id="hover-div">
+      <img class="wordle" src="https://mail.google.com/mail/u/0/?ui=2&ik=a406f72f4c&view=fimg&th=14622e05c2c12117&attid=0.1&disp=inline&realattid=f_hvhr35kf1&safe=1&attbid=ANGjdJ92ZP09u4q92yHp3N3CI6WZOJoVE5na5G_0J08WVAC5hiGuRvxRJB4k1b2qxADdEjhZHy4avvMnWp9UlKneTxO8oOh2VSZcbkwYV37CqfVl5l7NKCTVJpsEXEA&ats=1400744468409&rm=14622e05c2c12117&zw&sz=w539-h773" alt="">
+    </div>
 
-<div class="search">
+    <span class="wordle-element">Make your own word map! <a href="http://www.wordle.net">Use Wordle</a></span>
+
+    <div class="about right">
+      <p>We live in an increasingly bi-lingual society. Turn your next adventure in Mexico into a true learning experience. Learn through immersion. This site aims to make your choice easier, by helping you choose the right school for you. Check out the school pages, and search through the many options!
+      </p>
+    </div>
+
+
+
+</div><div class="about header"></div>
+
+<div class="about search">
   <h3>Search by Name</h3>
   <form action="/schools/search" method='get'>
     <input type="hidden" name='col' value='name'>
