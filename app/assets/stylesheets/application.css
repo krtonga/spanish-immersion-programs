@@ -156,7 +156,7 @@ button.nav {
 }
 
 .me {
-  text alight: right;
+  text-align: right;
   background-color: black;
   color: white;
 }
